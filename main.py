@@ -93,11 +93,11 @@ for i in range(attemps):
         # Если была введена команда /help
         @bot.message_handler(commands=['help'])
         def help_message(message):
-            if str(message.chat.id) == user_id:  # Если id пользователя = id админа, то...
+            if str(message.chat.id) == user_id:  # Если id пользователя = id админа
                 help_mess = '''Нажмите на кнопки, чтобы выполнить команды.
         Если введёте ту команду, которой нет, то она выполнится в консоли.'''
                 bot.send_message(user_id, help_mess)  # Бот отправляет help текст
-            else:  # Если id пользователя не = id админа, то...
+            else:  # Если id пользователя не = id админа
                 # Бот говорит, что это сообщение не для тебя
                 bot.send_message(message.chat.id, 'Извини, но это сообщение не для тебя :)')
 
@@ -105,11 +105,11 @@ for i in range(attemps):
         # Если была введена команда /help
         @bot.message_handler(commands=['help'])
         def help_message(message):
-            if str(message.chat.id) == user_id:  # Если id пользователя = id админа, то...
+            if str(message.chat.id) == user_id:  # Если id пользователя = id админа
                 help_mess = '''Нажмите на кнопки, чтобы выполнить команды.
                 Если введёте ту команду, которой нет, то она выполнится в консоли.'''
                 bot.send_message(user_id, help_mess)  # Бот отправляет help текст
-            else:  # Если id пользователя не = id админа, то...
+            else:  # Если id пользователя не = id админа
                 # Бот говорит, что этот бот не для тебя
                 bot.send_message(message.chat.id, 'Извини, но этот бот не для тебя :)')
 
@@ -118,7 +118,7 @@ for i in range(attemps):
         @bot.message_handler(content_types=['text'])
         def text_message(message):
             if str(message.chat.id) == user_id:  # Если id пользователя = id админа
-                if message.text == 'Получить IP':  # Если текст = Получить IP, то...
+                if message.text == 'Получить IP':  # Если текст = Получить IP
                     # Берём IP пользователя
                     target_ip = requests.get('https://ip.42.pl/raw').text
                     # Отправляем пользователю IP
